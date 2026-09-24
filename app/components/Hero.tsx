@@ -41,15 +41,6 @@ export function Hero() {
       <div className="shell relative grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
         {/* Left — who AZUO is */}
         <div>
-          <motion.div
-            initial={reduce ? undefined : { opacity: 0 }}
-            animate={reduce ? undefined : { opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="eyebrow mb-7"
-          >
-            AI Engineering Studio
-          </motion.div>
-
           <motion.h1
             className="text-mega"
             initial={reduce ? undefined : "hidden"}

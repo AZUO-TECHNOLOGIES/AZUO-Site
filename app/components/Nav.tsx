@@ -10,7 +10,6 @@ const LINKS = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -51,39 +50,8 @@ export function Nav() {
           <a href="#contact" className="btn-glass hidden py-2.5 text-sm sm:inline-flex">
             Contact
           </a>
-          <button
-            aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
-            className="btn-ghost md:hidden"
-          >
-            <span className="text-sm">{open ? "Close" : "Menu"}</span>
-          </button>
         </div>
       </nav>
-
-      {open && (
-        <div className="glass-nav absolute top-[4.5rem] left-4 right-4 rounded-3xl p-3 md:hidden">
-          <div className="flex flex-col">
-            {LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-3 text-[var(--color-ink-soft)] hover:bg-white/50"
-              >
-                {l.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="btn-glass mt-2 justify-center"
-            >
-              Start Your Project
-            </a>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
